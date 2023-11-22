@@ -1,27 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Autorsko_delo_zahtev xmlns:a1="www.ftn.uns.ac.rs/ZahtevZaAutorskoDelo"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="file:/C:/Users/PC/Desktop/kts/XML_project/XMLProject/data/A-1.xsd" naslov="ЗАХТЕВ ЗА УНОШЕЊЕ У ЕВИДЕНЦИЈУ И ДЕПОНОВАЊЕ АУТОРСКИХ ДЕЛА" broj_prijave="BiJCFl0VPyjnw1PFrENN7oe"
-     datum_podnosenja="2025-08-15Z">
-    <Podnosilac>
-        <Telefon>0616154217</Telefon>
-        <Email>boja@gmail.com</Email>
-        <Podaci_podnosioca>
-            <Autor primarni="0" anonimni="false">
-                <Ime>bojan</Ime>
-                <Prezime>vasic</Prezime>
-                <Adresa>
-                    <Mesto>Sabac</Mesto>
-                    <Ulica>Jovana cvijica</Ulica>
-                    <Broj>20</Broj>
-                </Adresa>
-                <Drzavljanstvo>Srpsko</Drzavljanstvo>
-                <Pseudonim>bokilence</Pseudonim>
-                <Godina_smrti></Godina_smrti>
-            </Autor>
-        </Podaci_podnosioca>
-    </Podnosilac>
-    <Autorsko_delo vrsta="knjiga" forma_zapisa="stampa" prerada="0">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Autorsko_delo_zahtev naslov="Najnovija istorija srba" broj_prijave="123456789" datum_podnosenja="2025-08-15Z">
+    <Podnosilac/>
+    <Autorsko_delo vrsta="knjiga" forma_zapisa="stampa" prerada="false">
         <Identifikator>
             <Naslov>Ispiti u sep</Naslov>
             <Alternativni_naslov>pakao</Alternativni_naslov>
@@ -37,7 +17,7 @@
                 </Adresa>
                 <Drzavljanstvo>Albansko</Drzavljanstvo>
                 <Pseudonim>PeraZec</Pseudonim>
-                <Godina_smrti></Godina_smrti>
+                <Godina_smrti xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             </Autor>
             <Autor primarni="false" anonimni="false">
                 <Ime>milan</Ime>
@@ -45,11 +25,11 @@
                 <Adresa>
                     <Mesto>Beograd</Mesto>
                     <Ulica>gosopdara vucica</Ulica>
-                    <Broj>047394934</Broj>
+                    <Broj>47394934</Broj>
                 </Adresa>
                 <Drzavljanstvo>Nemacko</Drzavljanstvo>
                 <Pseudonim>nemacker</Pseudonim>
-                <Godina_smrti></Godina_smrti>
+                <Godina_smrti xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
             </Autor>
         </Autori>
         <podaci_o_preradi>
@@ -68,7 +48,7 @@
                     </Adresa>
                     <Drzavljanstvo>Srpsko</Drzavljanstvo>
                     <Pseudonim>Kajga</Pseudonim>
-                    <Godina_smrti></Godina_smrti>
+                    <Godina_smrti xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                 </Autor>
             </Autori>
         </podaci_o_preradi>
@@ -76,7 +56,7 @@
         <nacin_koriscenja>citanje</nacin_koriscenja>
     </Autorsko_delo>
     <Prilog>
-        <Sadrzi_opis>true</Sadrzi_opis>
-        <Sadrzi_primer>true</Sadrzi_primer>
+        <Sadrzi_opis>false</Sadrzi_opis>
+        <Sadrzi_primer>false</Sadrzi_primer>
     </Prilog>
 </Autorsko_delo_zahtev>

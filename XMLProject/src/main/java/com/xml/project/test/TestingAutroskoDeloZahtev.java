@@ -3,9 +3,13 @@ package com.xml.project.test;
 import com.google.gson.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.xml.project.model.AutorskoDeloZahtev;
+import com.xml.project.model.*;
 import com.xml.project.service.*;
+import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+
+import java.math.BigInteger;
 
 
 public class TestingAutroskoDeloZahtev {
@@ -20,41 +24,40 @@ public class TestingAutroskoDeloZahtev {
 
     private static void ispisi(AutorskoDeloZahtev autroskoZahtev) {
 
-        Gson gson =new GsonBuilder().setPrettyPrinting()
-                .create();
-
-        System.out.println(autroskoZahtev.toString());
-        String json = gson.toJson(autroskoZahtev);
-        System.out.println(json);
+        System.out.println(autroskoZahtev);
     }
 
-//    private static void izmeniObrazacAutori(ObrazacAutori obrazacAutori) {
-//        Adresa a1 = new Adresa();
-//        a1.setUlica("Nova ulica");
-//        a1.setBroj("21A");
-//        a1.setDrzava("Srbija");
-//        a1.setPostanskiBroj(22000);
-//        a1.setMesto("Neko mesto");
-//
-//        PodaciOLicu podaciOPeri = new PodaciOLicu();
-//        podaciOPeri.setEmail("pera@gmail.com");
-//        podaciOPeri.setTelefon("065-314-23-23");
-//
-//        FizickoLiceSaDrzavljanstvom pera = new FizickoLiceSaDrzavljanstvom();
-//        pera.setIme("Pera");
-//        pera.setPrezime("Peric");
-//        pera.setAdresa(a1);
-//        pera.setPodaciOLicu(podaciOPeri);
-//        pera.setDrzavljanstvo("Sprsko");
-//
-//        obrazacAutori.getPodnosilac().add(pera);
-//        obrazacAutori.setStvorenoURadnomOdnosu(true);
-//        obrazacAutori.setNacinKoriscenja("izdato");
-//    }
-//
-//    private static void sacuvajIzmeneObrascaUNoviXMLFajl(ObrazacAutori obrazacAutori) throws JAXBException {
-//        MarshallingXMLService.saveObrazacAutoriToXml(obrazacAutori, FAJL_AUTORI_GENERISAN);
-//    }
+    private static void izmeniObrazacAutori(AutorskoDeloZahtev autorskoDeloZahtev) {
+        Adresa a1 = new Adresa();
+        a1.setUlica("Nova ulica");
+        a1.setBroj(BigInteger.valueOf(434));
+        a1.setMesto("Kragujevac");
+        ObjectFactory objectFactory= new ObjectFactory();
+
+
+        TFizickoLice pera = new TFizickoLice();
+        pera.setIme("velja");
+        pera.setPrezime("selja");
+        pera.setAdresa(a1);
+        pera.setDrzavljanstvo("Sprsko");
+        autorskoDeloZahtev.setNaslov("Najnovija istorija srba");
+        autorskoDeloZahtev.setBrojPrijave("123456789");
+        TPrilog t = new TPrilog();
+        t.setSadrziOpis(false);
+        t.setSadrziPrimer(false);
+        autorskoDeloZahtev.setPrilog(objectFactory.createAutorskoDeloZahtevPrilog(t));
+        AutorskoDeloZahtev.Podnosilac p = new AutorskoDeloZahtev.Podnosilac();
+
+        autorskoDeloZahtev.setPodnosilac(objectFactory.createAutorskoDeloZahtevPodnosilac());
+
+    }
+
+    private static void sacuvajIzmeneObrascaUNoviXMLFajl(AutorskoDeloZahtev autorskoDeloZahtev) throws JAXBException {
+
+
+
+        MarshallingXMLService.saveZahtevToXml(autorskoDeloZahtev, FAJL_AUTORI_GENERISAN);
+    }
 
     private static void testAutori() throws JAXBException {
 
@@ -62,40 +65,19 @@ public class TestingAutroskoDeloZahtev {
         AutorskoDeloZahtev autroskoZahtev = ucitaj(FAJL_AUTORI_PREDEFINISAN);
 
         ispisi(autroskoZahtev);
-//
-//        izmeniObrazacAutori(obrazacAutori);
-//
-//        sacuvajIzmeneObrascaUNoviXMLFajl(obrazacAutori);
-//
-//        ObrazacAutori sacuvanObrazac = ucitaj(FAJL_AUTORI_GENERISAN);
-//
-//        System.out.println("===============================================");
-//        System.out.println("NAKON IZMENE");
-//        System.out.println("===============================================");
-//        ispisi(sacuvanObrazac);
+
+        izmeniObrazacAutori(autroskoZahtev);
+
+        sacuvajIzmeneObrascaUNoviXMLFajl(autroskoZahtev);
+
+        AutorskoDeloZahtev a = ucitaj(FAJL_AUTORI_GENERISAN);
+
+        System.out.println("\n\n\n\n===============================================\n\n\n\n\n");
+
+        ispisi(a);
     }
 
     public static void main(String[] args) throws JAXBException {
-//        File directoryPath = new File(FAJL_AUTORI_PREDEFINISAN);
-//        FileFilter textFilefilter = new FileFilter(){
-//            public boolean accept(File file) {
-//                boolean isFile = file.isFile();
-//                if (isFile) {
-//                    return true;
-//                } else {
-//                    return false;
-//                }
-//            }
-//        };
-//        //List of all the text files
-//        File filesList[] = directoryPath.listFiles(textFilefilter);
-//        System.out.println("List of the text files in the specified directory:");
-//        for(File file : filesList) {
-//            System.out.println("File name: "+file.getName());
-//            System.out.println("File path: "+file.getAbsolutePath());
-//            System.out.println("Size :"+file.getTotalSpace());
-//            System.out.println(" ");
-//        }
         testAutori();
     }
 }

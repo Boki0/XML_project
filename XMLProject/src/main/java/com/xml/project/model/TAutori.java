@@ -66,4 +66,14 @@ public class TAutori {
         return this.autor;
     }
 
+    @Override
+    public String toString() {
+       StringBuffer bf = new StringBuffer();
+        for (TAutor t: autor) {
+            bf.append(t.toString());
+
+        }
+        return bf.toString();
+
+    }
 }

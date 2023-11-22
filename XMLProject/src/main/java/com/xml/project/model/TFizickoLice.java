@@ -147,4 +147,8 @@ public class TFizickoLice {
         this.drzavljanstvo = value;
     }
 
+    @Override
+    public String toString() {
+        return "TFizickoLice\n" + ime + "  " +prezime+ "  " + adresa  + "  " +drzavljanstvo +"\n";
+    }
 }

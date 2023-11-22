@@ -242,14 +242,13 @@ public class AutorskoDeloZahtev {
 
     @Override
     public String toString() {
-        return "AutorskoDeloZahtev{" +
-                "podnosilac=" + podnosilac.getEmail() +podnosilac.getTelefon() + podnosilac.getPodaciPodnosioca() +
-                ", autorskoDelo=" + autorskoDelo +
-                ", prilog=" + prilog +
-                ", naslov='" + naslov + '\'' +
-                ", brojPrijave='" + brojPrijave + '\'' +
-                ", datumPodnosenja=" + datumPodnosenja +
-                '}';
+        return "AutorskoDeloZahtev\n" +
+                podnosilac +
+                autorskoDelo +
+                prilog.getValue() +"\n"+
+               "naslov = "+ naslov +"\n"+
+                "br. prijave = "+brojPrijave  +"\n"+
+                "datum podnosenja = "+datumPodnosenja;
     }
 
 
@@ -381,6 +380,15 @@ public class AutorskoDeloZahtev {
             this.podaciPodnosioca = value;
         }
 
+        @Override
+        public String toString() {
+            return "Podnosilac\n\t\t" +
+                    "telefon=" + (telefon !=null ? telefon.getValue():"") +
+                    " email='" + email  +
+                    " podaciPodnosioca=" + podaciPodnosioca +
+                    '\n';
+        }
+
 
         /**
          * <p>Java class for anonymous complex type.
@@ -488,6 +496,15 @@ public class AutorskoDeloZahtev {
              */
             public void setPravnoLice(JAXBElement<TPravnoLice> value) {
                 this.pravnoLice = value;
+            }
+
+            @Override
+            public String toString() {
+                return "PodaciPodnosioca\n" +
+                        (autor ==null?  "":  autor )+
+                        (punomocnik ==null?  "":  punomocnik.getValue() )+
+                        (pravnoLice ==null?  "":  pravnoLice.getValue() )+
+                        "\n";
             }
 
         }

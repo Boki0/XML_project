@@ -119,5 +119,16 @@ public class Adresa {
     public void setBroj(BigInteger value) {
         this.broj = value;
     }
+    @Override
+    public String toString() {
+
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("\n");
+        buffer.append("Adresa: ");
+        buffer.append("\n\t\t");
+        buffer.append(mesto+"  "+ ulica+ "  "+broj);
+        return buffer.toString();
+    }
+
 
 }

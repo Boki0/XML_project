@@ -145,5 +145,9 @@ public class TAutor
     public void setAnonimni(Boolean value) {
         this.anonimni = value;
     }
+    @Override
+    public String toString() {
+        return "TAutor\n\t\t" + pseudonim.getValue() +" godinaSmrti=" + godinaSmrti.getValue() +" primarni=" + primarni +" anonimni=" + anonimni +super.toString() +"\n";
+    }
 
 }

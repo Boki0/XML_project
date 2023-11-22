@@ -70,4 +70,16 @@ public class TPrilog {
         this.sadrziPrimer = value;
     }
 
+    @Override
+    public String toString() {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("\n");
+        buffer.append("Prisutan opis: ");
+        buffer.append(sadrziOpis ? "da" : "ne");
+        buffer.append("\n");
+        buffer.append("Prisutan primer: ");
+        buffer.append(sadrziPrimer ? "da" : "ne");
+        return buffer.toString();
+    }
+
 }

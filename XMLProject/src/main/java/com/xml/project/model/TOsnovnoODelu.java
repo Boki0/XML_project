@@ -104,6 +104,13 @@ public class TOsnovnoODelu {
         this.autori = value;
     }
 
+    @Override
+    public String toString() {
+        return "TOsnovnoODelu\n\t\t\t" + "identifikator=" + identifikator +
+                " autori=" + autori +
+    "\n";
+    }
+
 
     /**
      * <p>Java class for anonymous complex type.
@@ -182,6 +189,10 @@ public class TOsnovnoODelu {
          */
         public void setAlternativniNaslov(JAXBElement<String> value) {
             this.alternativniNaslov = value;
+        }
+        @Override
+        public String toString() {
+            return "Identifikator\n\t\t" + naslov  +", alternativniNaslov=" + alternativniNaslov.getValue() + "\n";
         }
 
     }

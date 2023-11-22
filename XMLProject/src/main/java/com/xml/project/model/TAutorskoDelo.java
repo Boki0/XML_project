@@ -200,4 +200,13 @@ public class TAutorskoDelo
         this.prerada = value;
     }
 
+    @Override
+    public String toString() {
+        return "TAutorskoDelo\n\t\t" +"podaciOPreradi=" + podaciOPreradi.getValue() +
+                ", radniOdnos='" + radniOdnos.getValue()  +
+                ", nacinKoriscenja='" + nacinKoriscenja.getValue()  +
+                ", vrsta='" + vrsta  +
+                ", formaZapisa='" + formaZapisa  +
+                ", prerada=" + prerada + super.toString()+"}\n";
+    }
 }

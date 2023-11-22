@@ -87,4 +87,8 @@ public class TPravnoLice {
         this.adresa = value;
     }
 
+    @Override
+    public String toString() {
+        return "TPravnoLice\n\t\t" + "naziv='" + naziv   + adresa.toString() + "\n";
+    }
 }
