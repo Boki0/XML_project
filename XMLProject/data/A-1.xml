@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Autorsko_delo_zahtev xmlns:a1="www.ftn.uns.ac.rs/ZahtevZaAutorskoDelo"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/C:/Users/PC/Desktop/kts/XML_project/XMLProject/data/A-1.xsd" naslov="ЗАХТЕВ ЗА УНОШЕЊЕ У ЕВИДЕНЦИЈУ И ДЕПОНОВАЊЕ АУТОРСКИХ ДЕЛА" broj_prijave="BiJCFl0VPyjnw1PFrENN7oe"
+     datum_podnosenja="2025-08-15Z">
+    <Podnosilac>
+        <Telefon>sYpgBA5yvs6QH</Telefon>
+        <Email>jAEmo7NQn12</Email>
+        <Podaci_podnosioca>
+            <Autor primarni="0" anonimni="true">
+                <Ime>aOFu8f64</Ime>
+                <Prezime>gQux2Q7GztB</Prezime>
+                <Adresa>
+                    <Mesto>SO4PCS8lw</Mesto>
+                    <Ulica>jc27QANBa7</Ulica>
+                    <Broj>421720942</Broj>
+                </Adresa>
+                <Drzavljanstvo>pwb5lCH</Drzavljanstvo>
+                <Pseudonim>b-8XRM9BIqC_Ws</Pseudonim>
+                <Godina_smrti>570841741</Godina_smrti>
+            </Autor>
+        </Podaci_podnosioca>
+    </Podnosilac>
+    <Autorsko_delo vrsta="bPRP" forma_zapisa="VnFPqV.B8QEqn8YITsjmW" prerada="0">
+        <Identifikator>
+            <Naslov>_eLRZ</Naslov>
+            <Alternativni_naslov>qQjQO.</Alternativni_naslov>
+        </Identifikator>
+        <Autori>
+            <Autor primarni="false" anonimni="false">
+                <Ime>o052gwY</Ime>
+                <Prezime>RE3ZkQ8XA_ldCWTiT6LzKG</Prezime>
+                <Adresa>
+                    <Mesto>_LRcJqrP</Mesto>
+                    <Ulica>KPaqU2bN5axFx9WVdKs</Ulica>
+                    <Broj>1289629765</Broj>
+                </Adresa>
+                <Drzavljanstvo>BeoSS_V2H6PVcoibppfbsd</Drzavljanstvo>
+                <Pseudonim>N6</Pseudonim>
+                <Godina_smrti>-1322300905</Godina_smrti>
+            </Autor>
+            <Autor primarni="false" anonimni="false">
+                <Ime>zUS1SAkvHEXBUyYylIlVj5wezUKA</Ime>
+                <Prezime>Kdsm0EXRBKTND7tQwQstlQOe3f</Prezime>
+                <Adresa>
+                    <Mesto>wDPcr7y9Gvmuc4hDTCkHf0CCOoPAGoutQGK</Mesto>
+                    <Ulica>W3PrvKYywozy8YiJ14m06UdeDEBPIT</Ulica>
+                    <Broj>867329605</Broj>
+                </Adresa>
+                <Drzavljanstvo>UZtogrZEmbtY</Drzavljanstvo>
+                <Pseudonim>iLZGjfn2EWhBa-N.dF84c</Pseudonim>
+                <Godina_smrti>869392727</Godina_smrti>
+            </Autor>
+        </Autori>
+        <podaci_o_preradi>
+            <Identifikator>
+                <Naslov>x</Naslov>
+                <Alternativni_naslov>xEPGdS2jE99X-JtqK3MQIM0-4mJ</Alternativni_naslov>
+            </Identifikator>
+            <Autori>
+                <Autor primarni="false" anonimni="true">
+                    <Ime>DGNrbbegnQFpjgPnTr-0e5K1PXWx_hzch</Ime>
+                    <Prezime>GMcrup4.gfqKpyq26</Prezime>
+                    <Adresa>
+                        <Mesto>Z7txp3N2e7IWgeEB-TsxINw6Y-1FxEaUr3-Zj0fy</Mesto>
+                        <Ulica>Kh01AbQ1RbS7z7csma</Ulica>
+                        <Broj>1340421746</Broj>
+                    </Adresa>
+                    <Drzavljanstvo>WPCqmhV</Drzavljanstvo>
+                    <Pseudonim>eAYq</Pseudonim>
+                    <Godina_smrti>-1579536941</Godina_smrti>
+                </Autor>
+                <Autor primarni="0" anonimni="false">
+                    <Ime>Um6xM3yr-gB4d1vU.x1Dh</Ime>
+                    <Prezime>rlgH</Prezime>
+                    <Adresa>
+                        <Mesto>E2jiPef</Mesto>
+                        <Ulica>Vmz5CO_IhRq0E</Ulica>
+                        <Broj>1853258194</Broj>
+                    </Adresa>
+                    <Drzavljanstvo>vrkG0SUcA1yHTQ83VApTNQIYa</Drzavljanstvo>
+                    <Pseudonim>kNTehnTDhOiB</Pseudonim>
+                    <Godina_smrti>784266071</Godina_smrti>
+                </Autor>
+            </Autori>
+        </podaci_o_preradi>
+        <radni_odnos>vh</radni_odnos>
+        <nacin_koriscenja>_xi9fioZ</nacin_koriscenja>
+    </Autorsko_delo>
+    <Prilog>
+        <Sadrzi_opis>true</Sadrzi_opis>
+        <Sadrzi_primer>true</Sadrzi_primer>
+    </Prilog>
+</Autorsko_delo_zahtev>

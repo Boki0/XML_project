@@ -28,8 +28,18 @@ import jakarta.xml.bind.annotation.XmlType;
  *             &lt;complexContent&gt;
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *                 &lt;all&gt;
- *                   &lt;element name="Telefon" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *                   &lt;element name="Email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *                   &lt;element name="Telefon" minOccurs="0"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
+ *                   &lt;element name="Email" minOccurs="0"&gt;
+ *                     &lt;simpleType&gt;
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *                       &lt;/restriction&gt;
+ *                     &lt;/simpleType&gt;
+ *                   &lt;/element&gt;
  *                   &lt;element name="Podaci_podnosioca"&gt;
  *                     &lt;complexType&gt;
  *                       &lt;complexContent&gt;
@@ -230,6 +240,18 @@ public class AutorskoDeloZahtev {
         this.datumPodnosenja = value;
     }
 
+    @Override
+    public String toString() {
+        return "AutorskoDeloZahtev{" +
+                "podnosilac=" + podnosilac.getEmail() +podnosilac.getTelefon() + podnosilac.getPodaciPodnosioca() +
+                ", autorskoDelo=" + autorskoDelo +
+                ", prilog=" + prilog +
+                ", naslov='" + naslov + '\'' +
+                ", brojPrijave='" + brojPrijave + '\'' +
+                ", datumPodnosenja=" + datumPodnosenja +
+                '}';
+    }
+
 
     /**
      * <p>Java class for anonymous complex type.
@@ -241,8 +263,18 @@ public class AutorskoDeloZahtev {
      *   &lt;complexContent&gt;
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
      *       &lt;all&gt;
-     *         &lt;element name="Telefon" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
-     *         &lt;element name="Email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+     *         &lt;element name="Telefon" minOccurs="0"&gt;
+     *           &lt;simpleType&gt;
+     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *             &lt;/restriction&gt;
+     *           &lt;/simpleType&gt;
+     *         &lt;/element&gt;
+     *         &lt;element name="Email" minOccurs="0"&gt;
+     *           &lt;simpleType&gt;
+     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+     *             &lt;/restriction&gt;
+     *           &lt;/simpleType&gt;
+     *         &lt;/element&gt;
      *         &lt;element name="Podaci_podnosioca"&gt;
      *           &lt;complexType&gt;
      *             &lt;complexContent&gt;

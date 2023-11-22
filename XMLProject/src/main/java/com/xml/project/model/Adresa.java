@@ -1,10 +1,12 @@
 
 package com.xml.project.model;
 
+import java.math.BigInteger;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
 import jakarta.xml.bind.annotation.XmlType;
 
 
@@ -20,7 +22,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="Mesto" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="Ulica" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Broj" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Broj" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -43,7 +45,8 @@ public class Adresa {
     @XmlElement(name = "Ulica", required = true)
     protected String ulica;
     @XmlElement(name = "Broj", required = true)
-    protected String broj;
+    @XmlSchemaType(name = "positiveInteger")
+    protected BigInteger broj;
 
     /**
      * Gets the value of the mesto property.
@@ -98,10 +101,10 @@ public class Adresa {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link BigInteger }
      *     
      */
-    public String getBroj() {
+    public BigInteger getBroj() {
         return broj;
     }
 
@@ -110,10 +113,10 @@ public class Adresa {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link BigInteger }
      *     
      */
-    public void setBroj(String value) {
+    public void setBroj(BigInteger value) {
         this.broj = value;
     }
 

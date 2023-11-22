@@ -21,7 +21,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *         &lt;element name="Ime" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="Prezime" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element ref="{}Adresa"/&gt;
- *         &lt;element name="Drzavljanstvo" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Drzavljanstvo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -48,7 +48,7 @@ public class TFizickoLice {
     protected String prezime;
     @XmlElement(name = "Adresa", required = true)
     protected Adresa adresa;
-    @XmlElement(name = "Drzavljanstvo", required = true)
+    @XmlElement(name = "Drzavljanstvo")
     protected String drzavljanstvo;
 
     /**
