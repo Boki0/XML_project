@@ -15,6 +15,15 @@ public class UnmarshallingXMLService {
         return (AutorskoDeloZahtev) getUnmarshaller().unmarshal(new File(filePath));
     }
 
+    public AutorskoDeloZahtev unmarshalZahtevZaAutorskoDeloFromFile(String filePath) throws JAXBException{
+        System.out.println("[INFO] Unmarshalling XML document to an JAXB instance: ");
+
+
+        AutorskoDeloZahtev autorskoDeloZahtev = (AutorskoDeloZahtev) getUnmarshaller().unmarshal(new File(filePath));
+
+        return autorskoDeloZahtev;
+    }
+
     private static Unmarshaller getUnmarshaller() throws JAXBException {
         JAXBContext context = JAXBContext.newInstance(CONTEXT_PATH);
         return context.createUnmarshaller();

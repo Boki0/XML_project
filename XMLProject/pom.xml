@@ -74,6 +74,20 @@
 			<version>4.0.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>net.sf.xmldb-org</groupId>
+			<artifactId>xmldb-api</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.exist-db</groupId>
+			<artifactId>exist-core</artifactId>
+			<version>6.2.0</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
