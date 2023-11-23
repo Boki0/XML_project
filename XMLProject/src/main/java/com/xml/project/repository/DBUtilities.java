@@ -9,6 +9,7 @@ import org.xmldb.api.base.ResourceSet;
 import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.CollectionManagementService;
 import org.xmldb.api.modules.XMLResource;
+import org.xmldb.api.modules.XPathQueryService;
 import org.xmldb.api.modules.XQueryService;
 import org.exist.xmldb.EXistResource;
 
@@ -17,7 +18,7 @@ import com.xml.project.repository.AuthenticationUtilities.ConnectionProperties;
 import javax.xml.transform.OutputKeys;
 import java.io.OutputStream;
 
-public class ConnUtil {
+public class DBUtilities {
     private static ConnectionProperties conn;
 
 
@@ -37,8 +38,8 @@ public class ConnUtil {
     }
 
     public static void cleanup(Collection col, XMLResource res) {
-        ConnUtil.cleanup(col);
-        ConnUtil.cleanup(res);
+        DBUtilities.cleanup(col);
+        DBUtilities.cleanup(res);
     }
 
     public static void cleanup(Collection col) {
@@ -94,7 +95,7 @@ public class ConnUtil {
         return xqueryService;
     }
     public static ResourceSet getResourceSetByXQuery(Collection col, String targetNamespace, String xQueryExpression) throws XMLDBException {
-        XQueryService xqueryService = ConnUtil.getXQueryService(col, targetNamespace);
+        XQueryService xqueryService = DBUtilities.getXQueryService(col, targetNamespace);
         // compile and execute the expression
         CompiledExpression compiledXquery = xqueryService.compile(xQueryExpression);
         ResourceSet result = xqueryService.execute(compiledXquery);
@@ -160,4 +161,22 @@ public class ConnUtil {
             return col;
         }
     }
+
+    private static XPathQueryService getXPathService(Collection col, String targetNamespace) throws XMLDBException {
+        // get an instance of xpath query service
+        XPathQueryService xpathService = (XPathQueryService) col.getService("XPathQueryService", "1.0");
+        xpathService.setProperty("indent", "yes");
+
+        // make the service aware of namespaces, using the default one
+        xpathService.setNamespace("", targetNamespace);
+        return xpathService;
+    }
+
+    public static ResourceSet getResourceSetByXPath(Collection col, String targetNamespace, String xPathExpression) throws XMLDBException {
+        System.out.println("[INFO] Invoking XPath query service for: " + xPathExpression);
+        XPathQueryService xpathService = getXPathService(col, targetNamespace);
+        ResourceSet result = xpathService.query(xPathExpression);
+        return result;
+    }
+
 }

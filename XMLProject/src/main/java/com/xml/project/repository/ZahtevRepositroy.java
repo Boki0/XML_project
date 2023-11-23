@@ -3,8 +3,6 @@ package com.xml.project.repository;
 import com.xml.project.model.AutorskoDeloZahtev;
 import com.xml.project.service.MarshallingXMLService;
 import com.xml.project.service.UnmarshallingXMLService;
-import jakarta.xml.bind.JAXBContext;
-import org.w3c.dom.Node;
 import org.xmldb.api.base.Collection;
 import org.xmldb.api.base.ResourceSet;
 import org.xmldb.api.modules.XMLResource;
@@ -50,21 +48,21 @@ public class ZahtevRepositroy {
         XMLResource res = null;
         try {
 
-            ConnUtil.setup();
-            col = ConnUtil.initCollection(collectionId);
-            res = ConnUtil.initResource(col, resourceId);
+            DBUtilities.setup();
+            col = DBUtilities.initCollection(collectionId);
+            res = DBUtilities.initResource(col, resourceId);
 
             AutorskoDeloZahtev delo = unmarshallingXMLService.unmarshalZahtevZaAutorskoDeloFromFile(filePath);
 
             // do something to delo;
 
             OutputStream os = marshallingXMLService.marshallZahtevZaAutroskoDelo(delo);
-            ConnUtil.linkResourceToCollection(col, res, os);
+            DBUtilities.linkResourceToCollection(col, res, os);
 
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            ConnUtil.cleanup(col , res);
+            DBUtilities.cleanup(col , res);
         }
     }
 
@@ -92,19 +90,18 @@ public class ZahtevRepositroy {
 //        }
 //    }
 //
-//
-//    public ResourceSet getByXQuery(String xQueryExpression) {
-//        Collection col = null;
-//        try {
-//            ConnectionUtilities.setup();
-//            col = ConnectionUtilities.getCollection(collectionId);
-//            return ConnectionUtilities.getResourceSetByXQuery(col, TARGET_NAMESPACE, xQueryExpression);
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return null;
-//        } finally {
-//            ConnectionUtilities.cleanup(col);
-//        }
-//    }
+
+    public ResourceSet getByXPath(String xPathExpression) {
+        Collection col = null;
+        try {
+            col = DBUtilities.getCollection(collectionId);
+            return DBUtilities.getResourceSetByXPath(col, TARGET_NAMESPACE, xPathExpression);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            DBUtilities.cleanup(col);
+        }
+    }
 }
